@@ -5,7 +5,7 @@
 
 
 ## General Information
-- Provide general information about your project here.
+- `flask --app index.py run` to run the server
 
 
 ## Technologies Used
