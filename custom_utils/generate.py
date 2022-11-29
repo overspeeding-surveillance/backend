@@ -23,8 +23,8 @@ tracker = ManhattanDistanceTracker()
 
 def generate(filename):
     video_path = "highway.mp4"
-    print(filename)
-    if filename: video_path = filename
+    if filename:
+        video_path = filename
     cap = cv2.VideoCapture(video_path)
     while True:
         ret, frame = cap.read()
