@@ -1,4 +1,4 @@
-from flask import Flask, Response, render_template, request, send_from_directory
+from flask import Flask, Response, render_template, request, send_from_directory, jsonify
 from custom_utils.generate import generate
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
@@ -22,7 +22,7 @@ def upload():
     f = request.files['video']
     filename = secure_filename(str(uuid.uuid4()) + f.filename)
     f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    return filename
+    return jsonify({"filename": filename})
 
 
 # @app.route("/static_files/<path:path>")
